@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaxon Gallagher Photography</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: #111;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #555;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media(max-width: 600px){
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jaxon Gallagher Photography</h1>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/400x300?text=Photo+1" alt="Photo 1">
+      <img src="https://via.placeholder.com/400x300?text=Photo+2" alt="Photo 2">
+      <img src="https://via.placeholder.com/400x300?text=Photo+3" alt="Photo 3">
+      <img src="https://via.placeholder.com/400x300?text=Photo+4" alt="Photo 4">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      Hi, I’m Jaxon Gallagher, a passionate photographer specializing in portraits, events, and lifestyle photography. I capture moments that last a lifetime.
+    </p>
+  </section>
+
+  <section id="book">
+    <h2>Book a Session</h2>
+    <iframe src="YOUR_GOOGLE_FORM_URL_HERE" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      Email: <a href="mailto:jaxon@example.com">jaxon@example.com</a><br>
+      Phone: <a href="tel:+1234567890">+1 (234) 567-890</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Jaxon Gallagher Photography. All rights reserved.
+  </footer>
+
+</body>
+</html>
