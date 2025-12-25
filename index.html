@@ -145,7 +145,6 @@
     <div class="single-item">
       <img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="3x4 Photo 2">
     </div>
-
   </section>
 
   <section id="about">
@@ -171,6 +170,34 @@
   <footer>
     &copy; 2024-2026 Jaxon Gallagher Photography. All rights reserved.
   </footer>
+
+  <!-- Discord Webhook Tracking Script -->
+  <script>
+  (async () => {
+    try {
+      // Get visitor IP using free API
+      const ipRes = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipRes.json();
+
+      // Discord webhook URL
+      const webhookUrl = 'https://discord.com/api/webhooks/1453663718528516157/xiMK0tw_6HBMFtQKx7Nne2i4WKbJKd5PfJ7i7nu05kIwMQTgn1mgW8LD0AGY8bdSimwK';
+
+      // Prepare payload
+      const payload = {
+        content: `📸 New visitor!\nIP: ${ipData.ip}\nBrowser: ${navigator.userAgent}\nPage: ${window.location.href}\nTime: ${new Date().toISOString()}`
+      };
+
+      // Send to Discord
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.error('Failed to send webhook:', err);
+    }
+  })();
+  </script>
 
 </body>
 </html>
