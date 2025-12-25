@@ -43,43 +43,48 @@
       color: #111;
     }
 
-    /* Gallery styling */
+    /* Top row 4x3 images */
     .gallery-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .gallery-item {
+    .gallery-item, .single-item {
       overflow: hidden;
       border-radius: 12px;
       background: #eee;
-      flex: 1 1 300px; /* flex-grow, flex-shrink, base width */
-      max-width: 48%; /* for 2-column layout */
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover; /* maintain aspect ratio */
       transition: transform 0.4s, filter 0.4s;
     }
 
-    .gallery-item img:hover {
+    /* Top images side by side */
+    .gallery-item {
+      flex: 1 1 300px;
+      max-width: 48%;
+    }
+
+    /* Bottom images stacked */
+    .single-item {
+      max-width: 90%;
+      margin: 1rem auto 2rem auto;
+    }
+
+    /* Images scale to container and zoom on hover */
+    .gallery-item img, .single-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s, filter 0.4s;
+    }
+
+    .gallery-item img:hover, .single-item img:hover {
       transform: scale(1.05);
       filter: brightness(1.1);
     }
 
-    /* Single centered images */
-    .single-item {
-      max-width: 400px;
-      width: 90%;
-      margin: 1rem auto;
-    }
-
-    /* Booking form */
     iframe {
       width: 100%;
       max-width: 800px;
@@ -90,7 +95,6 @@
       margin: 0 auto;
     }
 
-    /* About & Contact text */
     .text-center {
       text-align: center;
       max-width: 700px;
@@ -109,7 +113,7 @@
       header h1 {
         font-size: 2rem;
       }
-      .gallery-item {
+      .gallery-item, .single-item {
         max-width: 100%;
       }
     }
@@ -124,24 +128,22 @@
   <section id="portfolio">
     <h2>Portfolio</h2>
 
-    <!-- Top row: two 4x3 images -->
+    <!-- Top row: two vertical 4x3 images side by side -->
     <div class="gallery-row">
       <div class="gallery-item">
-        <img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="4x3 Photo 1">
+        <img src="https://i.ibb.co/gpcVmhT/WNU2427.jpg" alt="4x3 Photo 1">
       </div>
       <div class="gallery-item">
-        <img src="https://i.ibb.co/0RvLLNLP/WNU1241.jpg" alt="4x3 Photo 2">
+        <img src="https://i.ibb.co/spm68Cby/WNU6208-2.jpg" alt="4x3 Photo 2">
       </div>
     </div>
 
-    <!-- Middle row: single 3x4 image -->
+    <!-- Bottom row: two 3x4 images stacked separately -->
     <div class="single-item">
-      <img src="https://i.ibb.co/gpcVmhT/WNU2427.jpg" alt="3x4 Photo 1">
+      <img src="https://i.ibb.co/0RvLLNLP/WNU1241.jpg" alt="3x4 Photo 1">
     </div>
-
-    <!-- Bottom row: single 3x4 image -->
     <div class="single-item">
-      <img src="https://i.ibb.co/spm68Cby/WNU6208-2.jpg" alt="3x4 Photo 2">
+      <img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="3x4 Photo 2">
     </div>
 
   </section>
