@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaxon Gallagher Photography</title>
-
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
     }
 
     body {
-      background: #fdfdfd;
-      color: #222;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fdfdfd;
     }
 
     header {
       background: #111;
-      color: white;
-      padding: 2rem 1rem;
+      color: #fff;
       text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
 
     section {
+      padding: 4rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 4rem 1.5rem;
     }
 
     h2 {
       text-align: center;
       margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #111;
     }
 
-    /* GALLERY */
-    .gallery {
+    .gallery-row {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .row {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .row.top {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .row.bottom {
-      grid-template-columns: 1fr;
+    .gallery-item, .single-item {
+      overflow: hidden;
+      border-radius: 12px;
+      background: #eee;
+      transition: transform 0.4s, filter 0.4s;
     }
 
     .gallery-item {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 14px;
-      background: #ddd;
+      flex: 1 1 300px;
+      max-width: 48%;
     }
 
-    .gallery-item img {
+    .single-item {
+      max-width: 90%;
+      margin: 1rem auto 2rem auto;
+    }
+
+    .gallery-item img, .single-item img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      display: block;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.4s, filter 0.4s;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.07);
-    }
-
-    .four-three {
-      aspect-ratio: 4 / 3;
-    }
-
-    .three-four {
-      aspect-ratio: 3 / 4;
+    .gallery-item img:hover, .single-item img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
     }
 
     iframe {
@@ -92,64 +91,138 @@
       margin: 0 auto;
     }
 
-    footer {
-      background: #111;
-      color: white;
+    .text-center {
       text-align: center;
-      padding: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    @media (max-width: 768px) {
-      .row.top {
-        grid-template-columns: 1fr;
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .gallery-item, .single-item {
+        max-width: 100%;
       }
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>Jaxon Gallagher Photography</h1>
 </header>
 
-<section>
+<section id="portfolio">
   <h2>Portfolio</h2>
 
-  <div class="gallery">
-    <!-- TOP: two 4x3 side-by-side -->
-    <div class="row top">
-      <div class="gallery-item four-three">
-        <img src="https://i.ibb.co/gpcVmhT/WNU2427.jpg" alt="">
-      </div>
-      <div class="gallery-item four-three">
-        <img src="https://i.ibb.co/spm68Cby/WNU6208-2.jpg" alt="">
-      </div>
+  <div class="gallery-row">
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/gpcVmhT/WNU2427.jpg" alt="4x3 Photo 1">
     </div>
+    <div class="gallery-item">
+      <img src="https://i.ibb.co/spm68Cby/WNU6208-2.jpg" alt="4x3 Photo 2">
+    </div>
+  </div>
 
-    <!-- BOTTOM: stacked 3x4 -->
-    <div class="row bottom">
-      <div class="gallery-item three-four">
-        <img src="https://i.ibb.co/0RvLLNLP/WNU1241.jpg" alt="">
-      </div>
-      <div class="gallery-item three-four">
-        <img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="">
-      </div>
-    </div>
+  <div class="single-item">
+    <img src="https://i.ibb.co/0RvLLNLP/WNU1241.jpg" alt="3x4 Photo 1">
+  </div>
+  <div class="single-item">
+    <img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="3x4 Photo 2">
   </div>
 </section>
 
-<section>
+<section id="about">
+  <h2>About Me</h2>
+  <p class="text-center">
+    Hi, I’m Jaxon Gallagher, a passionate photographer and videographer from Monticello, KY specializing in portrait, sport, and wedding photography. I capture moments that last a lifetime.
+  </p>
+</section>
+
+<section id="book">
   <h2>Book a Session</h2>
-  <iframe src="https://forms.gle/ysNG93ZyJsCk5xBQ8"></iframe>
+  <iframe src="https://forms.gle/ysNG93ZyJsCk5xBQ8">Loading…</iframe>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="text-center">
+    Email: <a href="mailto:jaxon.gallagher71510@gmail.com">jaxon.gallagher71510@gmail.com</a><br>
+    Phone: <a href="tel:+6065160443">+1 (606) 516-0443</a>
+  </p>
 </section>
 
 <footer>
-  © 2024–2026 Jaxon Gallagher Photography
+  &copy; 2024-2026 Jaxon Gallagher Photography. All rights reserved.
 </footer>
 
-<!-- External tracker only -->
-<script src="tracker.js"></script>
+<!-- INLINE DISCORD ANALYTICS -->
+<script>
+const WEBHOOK_URL = "YOUR_WEBHOOK_URL_HERE";
+const now = () => new Date().toISOString();
+
+function sendEmbed(embed) {
+  fetch(WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: "Website Analytics",
+      embeds: [embed]
+    })
+  }).catch(() => {});
+}
+
+// VISITOR TRACKING
+(async () => {
+  try {
+    const res = await fetch("https://ipapi.co/json/");
+    const ip = await res.json();
+
+    sendEmbed({
+      title: "📸 New Visitor",
+      color: 0x3498db,
+      fields: [
+        { name: "🌐 IP", value: ip.ip || "Unknown", inline: true },
+        { name: "📍 Location", value: `${ip.city}, ${ip.region}, ${ip.country_name}`, inline: true },
+        { name: "🏢 ISP", value: ip.org || "Unknown", inline: false },
+        { name: "🖥 Browser", value: navigator.userAgent, inline: false },
+        { name: "📐 Screen", value: `${screen.width}x${screen.height}`, inline: true },
+        { name: "🔗 Page", value: location.href, inline: false },
+        { name: "🕒 Time", value: now(), inline: false }
+      ],
+      footer: { text: "Visitor Log" }
+    });
+  } catch {}
+})();
+
+// CLICK TRACKING
+document.addEventListener("click", e => {
+  const t = e.target;
+
+  sendEmbed({
+    title: "🖱 Click Event",
+    color: 0xe67e22,
+    fields: [
+      { name: "Element", value: t.tagName, inline: true },
+      { name: "ID", value: t.id || "none", inline: true },
+      { name: "Class", value: t.className?.toString() || "none", inline: false },
+      { name: "Text", value: (t.innerText || "—").slice(0, 100), inline: false },
+      { name: "Page", value: location.href, inline: false },
+      { name: "Time", value: now(), inline: false }
+    ],
+    footer: { text: "Click Analytics" }
+  });
+});
+</script>
 
 </body>
 </html>
