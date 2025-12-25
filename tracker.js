@@ -1,4 +1,4 @@
-const WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1453663718528516157/xiMK0tw_6HBMFtQKx7Nne2i4WKbJKd5PfJ7i7nu05kIwMQTgn1mgW8LD0AGY8bdSimwK";
 
 const now = () => new Date().toISOString();
 
