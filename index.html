@@ -4,224 +4,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaxon Gallagher Photography</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
+    /* --- CSS VARIABLES --- */
+    :root {
+      --bg-color: #ffffff;
+      --off-white: #f9f9f9;
+      --text-main: #222222;
+      --text-light: #666666;
+      --accent: #000000;
+      --transition: 0.3s ease;
     }
 
+    /* --- BASE STYLES --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; } /* Enables smooth scrolling */
+    
     body {
-      line-height: 1.6;
-      color: #333;
-      background-color: #fdfdfd;
-    }
-
-    header {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      color: #111;
-    }
-
-    .gallery-row {
+      font-family: 'Lato', sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      background-color: var(--bg-color);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .gallery-item, .single-item {
-      overflow: hidden;
-      border-radius: 12px;
-      background: #eee;
-      transition: transform 0.4s, filter 0.4s;
+    a { text-decoration: none; color: var(--text-main); transition: var(--transition); border-bottom: 1px solid transparent; }
+    a:hover { color: var(--text-light); border-bottom: 1px solid var(--text-light); }
+
+    /* --- TYPOGRAPHY --- */
+    h1, h2 { font-family: 'Playfair Display', serif; color: var(--accent); }
+    h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 3px; }
+    p { margin-bottom: 1.5rem; }
+
+    /* --- HEADER --- */
+    header {
+      background: var(--bg-color);
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .gallery-item {
-      flex: 1 1 300px;
-      max-width: 48%;
-    }
+    .logo-container img { max-height: 80px; width: auto; display: block; margin-bottom: 1rem; }
+    
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
 
-    .single-item {
-      max-width: 90%;
-      margin: 1rem auto 2rem auto;
-    }
+    /* --- SECTIONS --- */
+    section { padding: 6rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .text-center { text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--text-light); }
 
-    .gallery-item img, .single-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.4s, filter 0.4s;
-    }
-
-    .gallery-item img:hover, .single-item img:hover {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
-
-    iframe {
-      width: 100%;
+    /* --- FORMS & CONTACT --- */
+    .iframe-container {
+      background: var(--off-white);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       max-width: 800px;
-      height: 600px;
-      border: none;
-      border-radius: 12px;
-      display: block;
       margin: 0 auto;
     }
+    iframe { width: 100%; height: 800px; border: none; }
+    
+    .contact-details { display: flex; flex-direction: column; align-items: center; gap: 1rem; font-size: 1.2rem; }
 
-    .text-center {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
+    /* --- FOOTER --- */
+    footer { background: var(--text-main); color: white; text-align: center; padding: 3rem 1rem; margin-top: auto; font-size: 0.9rem; }
+    
+    /* --- HERO/COVER IMAGE FOR HOME PAGE --- */
+    .hero {
+        height: 60vh;
+        background-image: url('https://i.ibb.co/1Jm0p85H/WNU8116.jpg'); /* Using one of your photos as a banner */
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%);
+        margin-bottom: 2rem;
     }
 
-    footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 4rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .gallery-item, .single-item {
-        max-width: 100%;
-      }
+    @media (max-width: 768px) {
+      nav ul { gap: 1rem; font-size: 0.8rem; }
+      h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Jaxon Gallagher Photography</h1>
+  <div class="logo-container">
+    <img src="https://placehold.co/400x150/222/FFF?text=JG+LOGO&font=playfair" alt="Jaxon Gallagher Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="gallery.html">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-
-  <div class="gallery-row">
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/gpcVmhT/WNU2427.jpg" alt="4x3 Photo 1">
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/spm68Cby/WNU6208-2.jpg" alt="4x3 Photo 2">
-    </div>
-  </div>
-
-  <div class="single-item">
-    <img src="https://i.ibb.co/0RvLLNLP/WNU1241.jpg" alt="3x4 Photo 1">
-  </div>
-  <div class="single-item">
-    <img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="3x4 Photo 2">
-  </div>
-</section>
+<div class="hero"></div>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p class="text-center">
-    Hi, I’m Jaxon Gallagher, a passionate photographer and videographer from Monticello, KY specializing in portrait, sport, and wedding photography. I have previously worked for The Wayne Weekly and The Commonwealth Journal. I capture moments that last a lifetime.
-  </p>
+  <h2>About The Photographer</h2>
+  <div class="text-center">
+    <p>
+      Hi, I’m <strong>Jaxon Gallagher</strong>. Based in the heart of Monticello, KY, I specialize in capturing the raw emotion of sports, the intimacy of portraits, and the timeless joy of weddings.
+    </p>
+    <p>
+      With experience at <em>The Wayne Weekly</em> and <em>The Commonwealth Journal</em>, I bring a photojournalistic approach to every session—ensuring your moments are documented authentically.
+    </p>
+    <p style="margin-top: 2rem;">
+        <a href="gallery.html" style="border: 1px solid #222; padding: 10px 20px;">View My Work</a>
+    </p>
+  </div>
 </section>
 
-<section id="book">
+<section id="book" style="background-color: var(--off-white); width: 100%; max-width: 100%;">
   <h2>Book a Session</h2>
-  <iframe src="https://forms.gle/ysNG93ZyJsCk5xBQ8">Loading…</iframe>
+  <div class="iframe-container">
+    <iframe src="https://forms.gle/ysNG93ZyJsCk5xBQ8">Loading Form…</iframe>
+  </div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p class="text-center">
-    Email: <a href="mailto:jaxon.gallagher71510@gmail.com">jaxon.gallagher71510@gmail.com</a><br>
-    Phone: <a href="tel:+6065160443">+1 (606) 516-0443</a>
-  </p>
+  <h2>Get In Touch</h2>
+  <div class="contact-details">
+    <div>
+      Email: <a href="mailto:jaxon.gallagher71510@gmail.com">jaxon.gallagher71510@gmail.com</a>
+    </div>
+    <div>
+      Phone: <a href="tel:+16065160443">+1 (606) 516-0443</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  &copy; 2024-2026 Jaxon Gallagher Photography. All rights reserved.
+  &copy; 2024-2026 Jaxon Gallagher Photography. <br> All rights reserved.
 </footer>
 
-<!-- INLINE DISCORD ANALYTICS -->
 <script>
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1453663718528516157/xiMK0tw_6HBMFtQKx7Nne2i4WKbJKd5PfJ7i7nu05kIwMQTgn1mgW8LD0AGY8bdSimwK";
+const WEBHOOK_URL = "PASTE_YOUR_WEBHOOK_URL_HERE"; 
 const now = () => new Date().toISOString();
-
 function sendEmbed(embed) {
-  fetch(WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      username: "Website Analytics",
-      embeds: [embed]
-    })
-  }).catch(() => {});
+  if (WEBHOOK_URL.includes("PASTE")) return;
+  fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username: "Analytics", embeds: [embed] }) }).catch(console.error);
 }
-
-// VISITOR TRACKING
 (async () => {
   try {
     const res = await fetch("https://ipapi.co/json/");
     const ip = await res.json();
-
-    sendEmbed({
-      title: "📸 New Visitor",
-      color: 0x3498db,
-      fields: [
-        { name: "🌐 IP", value: ip.ip || "Unknown", inline: true },
-        { name: "📍 Location", value: `${ip.city}, ${ip.region}, ${ip.country_name}`, inline: true },
-        { name: "🏢 ISP", value: ip.org || "Unknown", inline: false },
-        { name: "🖥 Browser", value: navigator.userAgent, inline: false },
-        { name: "📐 Screen", value: `${screen.width}x${screen.height}`, inline: true },
-        { name: "🔗 Page", value: location.href, inline: false },
-        { name: "🕒 Time", value: now(), inline: false }
-      ],
-      footer: { text: "Visitor Log" }
-    });
+    sendEmbed({ title: "🏠 Visited Home Page", color: 0x333333, fields: [{ name: "Loc", value: `${ip.city}`, inline: true }, { name: "Page", value: "Home", inline: true }] });
   } catch {}
 })();
-
-// CLICK TRACKING
-document.addEventListener("click", e => {
-  const t = e.target;
-
-  sendEmbed({
-    title: "🖱 Click Event",
-    color: 0xe67e22,
-    fields: [
-      { name: "Element", value: t.tagName, inline: true },
-      { name: "ID", value: t.id || "none", inline: true },
-      { name: "Class", value: t.className?.toString() || "none", inline: false },
-      { name: "Text", value: (t.innerText || "—").slice(0, 100), inline: false },
-      { name: "Page", value: location.href, inline: false },
-      { name: "Time", value: now(), inline: false }
-    ],
-    footer: { text: "Click Analytics" }
-  });
-});
 </script>
 
 </body>
