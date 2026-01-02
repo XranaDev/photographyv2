@@ -22,7 +22,7 @@
 
     /* --- BASE STYLES --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; } /* Enables smooth scrolling */
+    html { scroll-behavior: smooth; }
     
     body {
       font-family: 'Lato', sans-serif;
@@ -60,6 +60,19 @@
     nav ul { list-style: none; display: flex; gap: 2rem; }
     nav a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
 
+    /* --- HERO IMAGE --- */
+    .hero-image {
+        width: 100%;
+        height: auto; /* Allows natural scaling */
+        display: block;
+        filter: grayscale(100%);
+        margin-bottom: 2rem;
+        /* Optional: max-width to prevent it getting excessively large on huge screens */
+        max-width: 1600px; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
     /* --- SECTIONS --- */
     section { padding: 6rem 2rem; max-width: 1000px; margin: 0 auto; }
     .text-center { text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--text-light); }
@@ -80,15 +93,6 @@
     /* --- FOOTER --- */
     footer { background: var(--text-main); color: white; text-align: center; padding: 3rem 1rem; margin-top: auto; font-size: 0.9rem; }
     
-    /* --- HERO/COVER IMAGE FOR HOME PAGE --- */
-    .hero {
-        height: 60vh;
-        background-image: url('https://i.ibb.co/1Jm0p85H/WNU8116.jpg'); /* Using one of your photos as a banner */
-        background-size: cover;
-        background-position: center;
-        filter: grayscale(100%);
-        margin-bottom: 2rem;
-    }
 
     @media (max-width: 768px) {
       nav ul { gap: 1rem; font-size: 0.8rem; }
@@ -112,7 +116,7 @@
   </nav>
 </header>
 
-<div class="hero"></div>
+<img src="https://i.ibb.co/1Jm0p85H/WNU8116.jpg" alt="Hero Photograph" class="hero-image">
 
 <section id="about">
   <h2>About The Photographer</h2>
